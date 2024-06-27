@@ -1,5 +1,5 @@
 name: Continuous Integration
-on: [push]
+on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -23,3 +23,6 @@ jobs:
 # 2- Set up Python on the container.
 # 3- Install the Python dependencies of the Bank Account app defined in requirements.txt.
 # 4- Run the unit tests using Pytest.
+
+# 5- To run the tests when creating a new pull request we update the array of triggers to add pull_request:
+# previously -  on: [push], now - on: [push, pull_request]
